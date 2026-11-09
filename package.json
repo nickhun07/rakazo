@@ -78,7 +78,8 @@
     },
     "patchedDependencies": {
       "app-builder-lib@26.15.3": "patches/app-builder-lib@26.15.3.patch",
-      "dockerode@5.0.1": "patches/dockerode@5.0.1.patch"
+      "dockerode@5.0.1": "patches/dockerode@5.0.1.patch",
+      "@earendil-works/pi-ai@1.3.0": "patches/@earendil-works__pi-ai@1.3.0.patch"
     }
   }
 }
