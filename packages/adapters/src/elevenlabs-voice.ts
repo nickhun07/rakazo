@@ -20,9 +20,11 @@ import {
 } from "./voice-http.js";
 
 const API = "https://api.elevenlabs.io/v1";
-const MODEL = "eleven_flash_v2_5";
+// Fork: speech and transcription models can be set per deployment, because the default
+// Flash model cannot speak Thai. Unset keeps the upstream defaults.
+const MODEL = process.env.ELEVENLABS_TTS_MODEL?.trim() || "eleven_flash_v2_5";
 const FORMAT = "mp3_44100_64";
-const TRANSCRIBE_MODEL = "scribe_v2";
+const TRANSCRIBE_MODEL = process.env.ELEVENLABS_STT_MODEL?.trim() || "scribe_v2";
 
 export class ElevenLabsVoiceProvider implements VoiceProvider {
   describe(): AdapterDescriptor<VoiceCapabilities> {
